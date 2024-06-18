@@ -1,0 +1,40 @@
+.registration{
+    width: 300px;
+    height: auto;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    border-radius: 9px;
+}
+.registration h1{
+    color: white;
+    font-weight: 600;
+}
+.registration  input,.select,.select>.option{
+    width: 90%;
+    height: 30px;
+    background-color: aqua;
+    padding-left: 10px;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    border-radius: 9px;
+}
+.registration  button{
+    width: 120px;
+    height: 30px;
+    background: green;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 9px;
+}
+.registration button:hover{
+    box-shadow: 0px 0px 10px goldenrod,0px 0px 10px goldenrod;
+}
