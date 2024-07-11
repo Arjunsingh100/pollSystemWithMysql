@@ -5,6 +5,8 @@ const mysql = require('mysql2');
 const connection = require('./db.js');
 const app = express();
 const authRoute = require('./routes/AuthRoute.js');
+const adminRouter = require('./routes/AdminRoute.js');
+const userRoute = require('./routes/userRoute.js');
 
 
 dotenv.config();
@@ -14,6 +16,8 @@ app.use(express.json());
 
 //middlewares
 app.use('/api/v1/pollSystem/auth',authRoute);
+app.use('/api/v1/pollSystem/admin',adminRouter);
+app.use('/api/v1/pollSystem/user',userRoute)
 
 
 app.listen(process.env.PORT, async () => {
