@@ -14,6 +14,7 @@ const Login = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [pass,setPass] = useState(true);
     const [password, setPassword] = useState('');
     const [auth, setAuth] = useAuth();
     const navigate = useNavigate();
@@ -61,11 +62,14 @@ const Login = () => {
                         name='name'
                         required
                         onChange={(e) => { setPhone(e.target.value) }} />
-                    <input max='10' type='password'
-                        placeholder='Enter Password'
+                    <input max='10' type= {pass?'password':'text'}
+                        placeholder= 'Enter Password'
                         name='name'
                         required
                         onChange={(e) => { setPassword(e.target.value) }} />
+                        <div style={{color:'gray',cursor:'pointer',position:'absolute',right:'2rem',bottom:'7.4rem'}} onClick={()=>{setPass(!pass)}}>
+                            {pass?'show':'hide'}
+                        </div>
                     <button type='submit'>Sign In</button>
                     <Link to='/register'>Sign Up</Link>
                 </form>

@@ -14,6 +14,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [pass,setPass] = useState(true);
     const [role, setRole] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -61,11 +62,14 @@ const Register = () => {
                         <Option className='option w-100' value='Student'>Student</Option>
                         <Option className='option w-100' value='Institute'>Institute</Option>
                     </Select>
-                    <input max='10' type='phone'
+                    <input max='10' type= {pass?'password':'text'}
                         placeholder='Enter Password'
                         name='name'
                         required
                         onChange={(e) => { setPassword(e.target.value) }} />
+                        <div style={{color:'gray',cursor:'pointer',position:'absolute',right:'2rem',bottom:'7.4rem'}} onClick={()=>{setPass(!pass)}}>
+                            {pass?'show':'hide'}
+                        </div>
                     <button type='submit'>Sign Up</button>
                     <Link to='/login'>Sign In</Link>
                 </form>
